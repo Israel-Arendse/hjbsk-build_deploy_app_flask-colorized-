@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 # Import the Maths package here
+from Maths.mathematics import summation, subtraction, multiplication
 
 app = Flask("Mathematics Problem Solver")
 
@@ -8,6 +9,8 @@ def sum_route():
     num1 = float(request.args.get('num1'))
     num2 = float(request.args.get('num2'))
     # Write your code here
+    result = summation(num1, num2)
+    return str(result)
 
 @app.route("/sub")
 def sub_route():
