@@ -2,7 +2,7 @@ def summation(a, b):
     resutl = a + b
     return result
 
-def subtract(a, b):
+def subtraction(a, b):
     result = a - b
     return result
 
