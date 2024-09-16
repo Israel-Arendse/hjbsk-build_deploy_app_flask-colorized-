@@ -4,6 +4,7 @@ from Maths.mathematics import summation, subtraction, multiplication
 
 app = Flask("Mathematics Problem Solver")
 
+# Define app route for the summation function
 @app.route("/sum")
 def sum_route():
     num1 = float(request.args.get('num1'))
@@ -12,6 +13,7 @@ def sum_route():
     result = summation(num1, num2)
     return str(result)
 
+# Define app route for the subtraction function
 @app.route("/sub")
 def sub_route():
     num1 = float(request.args.get('num1'))
@@ -20,6 +22,7 @@ def sub_route():
     result = subtraction(num1, num2)
     return str(result)
 
+# Define app route for the multiplication function
 @app.route("/mul")
 def mul_route():
     num1 = float(request.args.get('num1'))
