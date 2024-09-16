@@ -7,29 +7,39 @@ app = Flask("Mathematics Problem Solver")
 # Define app route for the summation function
 @app.route("/sum")
 def sum_route():
-    num1 = float(request.args.get('num1'))
-    num2 = float(request.args.get('num2'))
-    # Write your code here
-    result = summation(num1, num2)
-    return str(result)
+    try:
+        num1 = float(request.args.get('num1'))
+        num2 = float(request.args.get('num2'))
+         # Write your code here
+        result = summation(num1, num2)
+        return str(result)
+    except ValueError:
+        return "Plase add an number"
+
 
 # Define app route for the subtraction function
 @app.route("/sub")
 def sub_route():
-    num1 = float(request.args.get('num1'))
-    num2 = float(request.args.get('num2'))
-    # Write your code here
-    result = subtraction(num1, num2)
-    return str(result)
+    try:
+        num1 = float(request.args.get('num1'))
+        num2 = float(request.args.get('num2'))
+        # Write your code here
+        result = subtraction(num1, num2)
+        return str(result)
+    except ValueError:
+        return "Please add an number"
+
 
 # Define app route for the multiplication function
 @app.route("/mul")
 def mul_route():
-    num1 = float(request.args.get('num1'))
-    num2 = float(request.args.get('num2'))
-    # Write your code here  
-    result = multiplication(num1, num2)
-    return str(result)
+        num1 = float(request.args.get('num1'))
+        num2 = float(request.args.get('num2'))
+        # Write your code here  
+        result = multiplication(num1, num2)
+        return str(result)
+    except ValueError:
+        return "Please add an number"
 
 @app.route("/")
 def render_index_page():
